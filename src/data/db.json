@@ -1,0 +1,43 @@
+{
+    "players": [
+      {
+        "id": 1,
+        "firstName": "Robert",
+        "lastName": "Lewandowski",
+        "teamId": 1
+      },
+      {
+        "id": 2,
+        "firstName": "Lionel",
+        "lastName": "Messi",
+        "teamId": 2
+      }
+    ],
+    "teams": [
+      {
+        "id": 1,
+        "name": "Bayern Munich",
+        "founded": 1900,
+        "location": "Munich, Germany"
+      },
+      {
+        "id": 2,
+        "name": "Paris Saint-Germain",
+        "founded": 1970,
+        "location": "Paris, France"
+      }
+    ],
+    "games": [
+      {
+        "id": 1,
+        "title": "UEFA Champions League Final",
+        "date": "2023-05-30",
+        "location": "Wembley Stadium",
+        "duration": "90 min",
+        "score": "3-2",
+        "team1Id": 1,
+        "team2Id": 2
+      }
+    ]
+  }
+  
