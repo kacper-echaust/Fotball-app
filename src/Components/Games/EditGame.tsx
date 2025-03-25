@@ -3,7 +3,7 @@ import { useUpdateApi } from '../../hooks/useUpdateApi'
 import { GameFormType, SingleAddGameType, SingleGameType } from '../../types'
 import { StyledButton } from '../ui/StyledButton/StyledButton'
 import styled from 'styled-components'
-import { CompetitionsForm } from './GameForm'
+import { GameForm } from './GameForm'
 
 type EditGameProps = {
 	setEdit: React.Dispatch<React.SetStateAction<boolean>>
@@ -55,12 +55,12 @@ const EditGame = ({ setEdit, game }: EditGameProps) => {
 
 	return (
 		<Container>
-			<CompetitionsForm handleSubmitGame={onSubmit} gameForm={gameForm}>
+			<GameForm handleSubmitGame={onSubmit} gameForm={gameForm}>
 				<StyledButton>Edytuj drużynę</StyledButton>
 				<StyledButton onClick={handleCancelEdit}>Anuluj</StyledButton>
-			</CompetitionsForm>
+			</GameForm>
 		</Container>
 	)
 }
 
-export { EditGame as EditCompetition }
+export { EditGame }
