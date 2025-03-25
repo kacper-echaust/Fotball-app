@@ -45,11 +45,11 @@ export type SingleUpdatePlayerType = {
 	label: string
 	id: number
 }
-export type SingleAddTeamToCompetitionType = {
+export type SingleAddTeamToGameType = {
 	name: string
 	label: string
 	id: number
 }
 export type TeamFormType = SingleTeamType & { updatedPlayers: SingleUpdatePlayerType[] }
 
-export type CompetitionFormType = SingleGameType & { teamCompetition: SingleAddTeamToCompetitionType[] }
+export type GameFormType = SingleGameType & { teamGame: SingleAddTeamToGameType[] }
