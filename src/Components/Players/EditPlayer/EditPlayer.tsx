@@ -27,7 +27,7 @@ const Container = styled.div`
 `
 
 const EditPlayer = ({ id, firstName, lastName, teamId, closeEdit }: Props) => {
-	const { mutate } = useUpdateApi('players')
+	const { mutateAsync } = useUpdateApi('players')
 	const formPlayer = useForm<SingleAddPlayerType>({
 		defaultValues: {
 			firstName,
@@ -37,7 +37,7 @@ const EditPlayer = ({ id, firstName, lastName, teamId, closeEdit }: Props) => {
 	})
 
 	const onSubmit = (data: SingleAddPlayerType) => {
-		mutate({ id, data })
+		mutateAsync({ id: id.toString(), data })
 		closeEdit()
 	}
 
