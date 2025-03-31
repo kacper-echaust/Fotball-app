@@ -10,10 +10,12 @@ type SingleGameProps = {
 }
 
 const List = styled.li`
+	list-style:none;
 	padding: 10px;
 	span {
 		font-weight: bold;
 	}
+	
 `
 
 const SingleGame = ({ game, teamsToGame }: SingleGameProps) => {
