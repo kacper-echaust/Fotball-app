@@ -6,8 +6,9 @@ import { MultiValue } from 'react-select'
 import Select from 'react-select'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
+import { GameFormType } from '../../types'
 
-type GameFormType = {
+type GameFormProps = {
 	gameForm: UseFormReturn<GameFormType>
 	children: ReactNode
 	handleSubmitGame: (data: GameFormType) => Promise<void>
@@ -19,7 +20,7 @@ const Error = styled.p`
 	margin: 0;
 	text-align: center;
 `
-const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormType) => {
+const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 	const { teams } = useGetApi()
 	const {
 		register,
