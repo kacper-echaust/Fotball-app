@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { FormPlayer } from '../FormPlayer/FormPlayer'
 import { useForm } from 'react-hook-form'
-import { SingleAddPlayerType } from '../../../types'
-import { useUpdateApi } from '../../../hooks/useUpdateApi'
-import { StyledButton } from '../../ui/StyledButton/StyledButton'
+import { useUpdateApi } from '../../hooks/useUpdateApi'
+import { SingleAddPlayerType } from '../../types'
+import { StyledButton } from '../ui/StyledButton/StyledButton'
+import { FormPlayer } from './FormPlayer'
 
 type Props = {
 	id: number

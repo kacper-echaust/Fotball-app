@@ -33,10 +33,8 @@ const AddTeam = () => {
 	}
 	const onSubmit = async (data: TeamFormType) => {
 		const { name, founded, location, updatedPlayers } = data
-		// Najpierw dodaj drużynę i czekaj na jej ID
 		console.log(data)
 		const newTeam = await handleAddTeam({ name, founded, location })
-		// Jeśli dodano zawodników, przypisz ich do drużyny
 		if (updatedPlayers?.length && newTeam?.id) {
 			handleAddPlayerToTeam(updatedPlayers, newTeam.id)
 		}
