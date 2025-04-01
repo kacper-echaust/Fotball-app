@@ -4,6 +4,7 @@ import { StyledForm } from '../ui/StyledForm/StyledForm'
 import { Controller, UseFormReturn } from 'react-hook-form'
 import { SingleUpdatePlayerType, TeamFormType } from '../../types'
 import { ReactNode } from 'react'
+import { StyledError } from '../ui/StyledError/StyledError'
 
 type FormTypeProps = {
 	children: ReactNode
@@ -12,7 +13,15 @@ type FormTypeProps = {
 }
 const TeamForm = ({ children, handleTeamSubmit, teamForm }: FormTypeProps) => {
 	const { players } = useGetApi()
-	const { register, handleSubmit, control, reset, watch, setValue } = teamForm
+	const {
+		register,
+		handleSubmit,
+		control,
+		reset,
+		watch,
+		setValue,
+		formState: { errors },
+	} = teamForm
 	const selectedPlayers = watch('updatedPlayers') || []
 	const availablePlayers = players
 		?.map(player => ({
@@ -24,7 +33,6 @@ const TeamForm = ({ children, handleTeamSubmit, teamForm }: FormTypeProps) => {
 		.filter(player => !selectedPlayers.some(selected => selected.id === player.id))
 
 	const onSubmit = async (data: TeamFormType) => {
-		console.log(data)
 		await handleTeamSubmit(data)
 		reset()
 	}
@@ -32,13 +40,46 @@ const TeamForm = ({ children, handleTeamSubmit, teamForm }: FormTypeProps) => {
 	return (
 		<StyledForm onSubmit={handleSubmit(onSubmit)}>
 			<label>
-				Nazwa drużyny: <input type='text' {...register('name')} />
+				Nazwa drużyny:{' '}
+				<input
+					type='text'
+					{...register('name', {
+						required: 'To pole jest wymagane',
+						pattern: {
+							value: /^[a-zA-Z]+$/,
+							message: 'Tylko litery od A do Z',
+						},
+					})}
+				/>
+				{errors.name && <StyledError>{errors.name.message}</StyledError>}
 			</label>
 			<label>
-				Rok założenia: <input type='number' {...register('founded')} />
+				Rok założenia:{' '}
+				<input
+					type='number'
+					{...register('founded', {
+						required: 'To pole jest wymagane',
+						pattern: {
+							value: /^[1-9][0-9]{0,3}$/,
+							message: 'Liczba nie może się zaczynać 0 i max 4 liczby',
+						},
+					})}
+				/>
+				{errors.founded && <StyledError>{errors.founded.message}</StyledError>}
 			</label>
 			<label>
-				Lokalizacja: <input type='text' {...register('location')} />
+				Lokalizacja:{' '}
+				<input
+					type='text'
+					{...register('location', {
+						required: 'To pole jest wymagane',
+						pattern: {
+							value: /^[a-zA-Z]+$/,
+							message: 'Tylko litery od A do Z',
+						},
+					})}
+				/>
+				{errors.location && <StyledError>{errors.location.message}</StyledError>}
 			</label>
 			<label>
 				Dodaj zawodnika:

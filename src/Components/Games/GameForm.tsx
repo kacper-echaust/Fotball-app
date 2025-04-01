@@ -5,21 +5,15 @@ import { SingleAddTeamToGameType } from '../../types'
 import { MultiValue } from 'react-select'
 import Select from 'react-select'
 import { ReactNode } from 'react'
-import styled from 'styled-components'
 import { GameFormType } from '../../types'
+import { StyledError } from '../ui/StyledError/StyledError'
 
 type GameFormProps = {
 	gameForm: UseFormReturn<GameFormType>
 	children: ReactNode
 	handleSubmitGame: (data: GameFormType) => Promise<void>
 }
-const Error = styled.p`
-	font-size: 10px;
-	color: red;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-`
+
 const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 	const { teams } = useGetApi()
 	const {
@@ -55,7 +49,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 						required: 'To pole jest wymagane',
 					})}
 				/>
-				{errors.title && <Error>{errors.title.message}</Error>}
+				{errors.title && <StyledError>{errors.title.message}</StyledError>}
 			</label>
 			<label>
 				Data: <input type='date' {...register('date')} />
@@ -68,7 +62,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 						required: 'To pole jest wymagane',
 					})}
 				/>
-				{errors.location && <Error>{errors.location.message}</Error>}
+				{errors.location && <StyledError>{errors.location.message}</StyledError>}
 			</label>
 			<label>
 				Czas trwania:{' '}
@@ -86,7 +80,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 						},
 					})}
 				/>
-				{errors.duration && <Error>{errors.duration.message}</Error>}
+				{errors.duration && <StyledError>{errors.duration.message}</StyledError>}
 			</label>
 			<label>
 				Wynik:{' '}
@@ -100,7 +94,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 						},
 					})}
 				/>
-				{errors.score && <Error>{errors.score.message}</Error>}
+				{errors.score && <StyledError>{errors.score.message}</StyledError>}
 			</label>
 			<label>
 				Dodaj drużyny:
@@ -125,7 +119,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 						/>
 					)}
 				/>
-				{errors.teamGame && <Error>{errors.teamGame.message}</Error>}
+				{errors.teamGame && <StyledError>{errors.teamGame.message}</StyledError>}
 			</label>
 			{children}
 		</StyledForm>
