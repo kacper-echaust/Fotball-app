@@ -6,8 +6,9 @@ import { MultiValue } from 'react-select'
 import Select from 'react-select'
 import { ReactNode } from 'react'
 import styled from 'styled-components'
+import { GameFormType } from '../../types'
 
-type GameFormType = {
+type GameFormProps = {
 	gameForm: UseFormReturn<GameFormType>
 	children: ReactNode
 	handleSubmitGame: (data: GameFormType) => Promise<void>
@@ -19,7 +20,7 @@ const Error = styled.p`
 	margin: 0;
 	text-align: center;
 `
-const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormType) => {
+const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormProps) => {
 	const { teams } = useGetApi()
 	const {
 		register,
@@ -94,8 +95,8 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormType) => {
 					{...register('score', {
 						required: 'To pole jest wymagane',
 						pattern: {
-							value: /^(1[0-7][0-9]|[1-9][0-9]?|20)-(1[0-7][0-9]|[1-9][0-9]?|20)$/,
-							message: 'Wpisz zakres w formacie np. 1-2 (1-20)',
+							value: /^(0[0-7][0-9]|[1-9][0-9]?|20)-(0[0-7][0-9]|[1-9][0-9]?|20)$/,
+							message: 'Wpisz zakres w formacie np. 1-2 (0-20)',
 						},
 					})}
 				/>
@@ -106,6 +107,9 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormType) => {
 				<Controller
 					name='teamGame'
 					control={control}
+					rules={{
+						validate: value => (value && value.length === 2 ? true : 'Wybierz dwie drużyny'),
+					}}
 					render={({ field }) => (
 						<Select
 							{...field}
@@ -121,6 +125,7 @@ const GameForm = ({ gameForm, children, handleSubmitGame }: GameFormType) => {
 						/>
 					)}
 				/>
+				{errors.teamGame && <Error>{errors.teamGame.message}</Error>}
 			</label>
 			{children}
 		</StyledForm>

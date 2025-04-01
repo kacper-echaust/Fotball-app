@@ -1,9 +1,9 @@
 import styled from 'styled-components'
-import { useGetApi } from '../../../hooks/useGetApi'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
-import { SingleAddPlayerType } from '../../../types'
-import { StyledButton } from '../../ui/StyledButton/StyledButton'
-import { StyledForm } from '../../ui/StyledForm/StyledForm'
+import { useGetApi } from '../../hooks/useGetApi'
+import { SingleAddPlayerType } from '../../types'
+import { StyledButton } from '../ui/StyledButton/StyledButton'
+import { StyledForm } from '../ui/StyledForm/StyledForm'
 
 const Error = styled.p`
 	font-size: 10px;

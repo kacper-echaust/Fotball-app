@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { StyledButton } from '../../ui/StyledButton/StyledButton'
-import { EditPlayer } from '../EditPlayer/EditPlayer'
+import { StyledButton } from '../ui/StyledButton/StyledButton'
+import { EditPlayer } from './EditPlayer'
+import { StyledLi } from '../ui/StyledList/StyledList'
 
 type SinglePlayerProps = {
 	firstName: string
@@ -11,17 +12,7 @@ type SinglePlayerProps = {
 	teamId: number
 	id: number
 }
-const List = styled.li`
-	list-style: none;
-	padding: 5px 0;
-	button {
-		margin: 2px;
-	}
-	> div:first-of-type button {
-		padding: 7px 13px;
-		font-size: 0.6rem;
-	}
-`
+
 const Team = styled.p`
 	margin: 0;
 	padding: 0;
@@ -67,7 +58,7 @@ const SinglePlayer = ({ firstName, lastName, team, onClick, teamId, id }: Single
 		onClick()
 	}
 	return (
-		<List>
+		<StyledLi>
 			{`${firstName} ${lastName}`}
 			<Team>{team}</Team>
 			{error && <ErrorP>{error}</ErrorP>}
@@ -92,7 +83,7 @@ const SinglePlayer = ({ firstName, lastName, team, onClick, teamId, id }: Single
 					teamId={teamId}
 					closeEdit={handleToggleEdit}></EditPlayer>
 			)}
-		</List>
+		</StyledLi>
 	)
 }
 

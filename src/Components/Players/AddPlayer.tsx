@@ -1,7 +1,7 @@
 import { useForm, SubmitHandler } from 'react-hook-form'
-import { usePostApi } from '../../../hooks/usePostApi'
-import { SinglePlayerType, SingleAddPlayerType } from '../../../types'
-import { FormPlayer } from '../FormPlayer/FormPlayer'
+import { usePostApi } from '../../hooks/usePostApi'
+import { SinglePlayerType, SingleAddPlayerType } from '../../types'
+import { FormPlayer } from './FormPlayer'
 
 const AddPlayer = () => {
 	const { mutateAsync } = usePostApi<SinglePlayerType, SingleAddPlayerType>('players')

@@ -5,18 +5,13 @@ import { useState } from 'react'
 import { SingleTeamType, SinglePlayerType } from '../../types'
 import { useDeleteApi } from '../../hooks/useDeleteApi'
 import { useGetApi } from '../../hooks/useGetApi'
+import { StyledLi } from '../ui/StyledList/StyledList'
 
 type SingleTeamProps = {
 	team: SingleTeamType
 	playersToTeam: SinglePlayerType[]
 }
 
-const List = styled.li`
-	padding: 10px;
-	span {
-		font-weight: bold;
-	}
-`
 const AcceptDeleteDiv = styled.div`
 	width: 100%;
 	height: 100%;
@@ -60,7 +55,7 @@ const SingleTeam = ({ team, playersToTeam }: SingleTeamProps) => {
 	}
 
 	return (
-		<List key={team.id}>
+		<StyledLi key={team.id}>
 			<p>
 				<span>Nazwa drużyny:</span> {team.name}
 			</p>
@@ -87,7 +82,7 @@ const SingleTeam = ({ team, playersToTeam }: SingleTeamProps) => {
 					<StyledButton onClick={() => setIsDelete(false)}>Anuluj</StyledButton>
 				</AcceptDeleteDiv>
 			)}
-		</List>
+		</StyledLi>
 	)
 }
 

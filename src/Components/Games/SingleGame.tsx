@@ -1,20 +1,13 @@
-import styled from 'styled-components'
 import { StyledButton } from '../ui/StyledButton/StyledButton'
 import { useState } from 'react'
 import { SingleTeamType, SingleGameType } from '../../types'
 import { EditGame } from './EditGame'
+import { StyledLi } from '../ui/StyledList/StyledList'
 
 type SingleGameProps = {
 	game: SingleGameType
 	teamsToGame: SingleTeamType[]
 }
-
-const List = styled.li`
-	padding: 10px;
-	span {
-		font-weight: bold;
-	}
-`
 
 const SingleGame = ({ game, teamsToGame }: SingleGameProps) => {
 	const [isEditing, setIsEditing] = useState(false)
@@ -24,7 +17,7 @@ const SingleGame = ({ game, teamsToGame }: SingleGameProps) => {
 	}
 
 	return (
-		<List key={game.id}>
+		<StyledLi key={game.id}>
 			<p>
 				<span>Nazwa rozgrywki:</span> {game.title}
 			</p>
@@ -48,7 +41,7 @@ const SingleGame = ({ game, teamsToGame }: SingleGameProps) => {
 			</div>
 			<StyledButton onClick={handleEditTeam}>Edytuj</StyledButton>
 			{isEditing && <EditGame setEdit={setIsEditing} game={game} />}
-		</List>
+		</StyledLi>
 	)
 }
 
