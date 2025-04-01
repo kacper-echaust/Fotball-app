@@ -1,86 +1,78 @@
 {
-  "players": [
-    {
-      "firstName": "Jan",
-      "lastName": "Kowalski",
-      "teamId": "1",
-      "id": "2"
-    },
-    {
-      "firstName": "Adam",
-      "lastName": "Nowak",
-      "label": "Adam Nowak",
-      "id": "3",
-      "teamId": "1"
-    },
-    {
-      "firstName": "Marek",
-      "lastName": "Lewandowski",
-      "label": "Marek Lewandowski",
-      "id": "5",
-      "teamId": "1"
-    },
-    {
-      "id": "3b1b",
-      "firstName": "asda",
-      "lastName": "adsa",
-      "teamId": 0
-    }
-  ],
-  "teams": [
-    {
-      "name": "FC Barcelona",
-      "founded": "1",
-      "location": "1",
-      "id": "1"
-    },
-    {
-      "name": "Bayern Munich",
-      "founded": "2",
-      "location": "2",
-      "id": "2"
-    }
-  ],
-  "games": [
-    {
-      "title": "UEFA Champions League Final",
-      "date": "2023-05-30",
-      "location": "Wembley Stadium",
-      "duration": "60",
-      "score": "3-2",
-      "team1Id": "1",
-      "team2Id": "2",
-      "id": "1"
-    },
-    {
-      "title": "Turniej Darka Budnioka",
-      "date": "2025-03-21",
-      "location": "Żory,Poland",
-      "duration": "90",
-      "score": "1-2",
-      "team1Id": "1",
-      "team2Id": "2",
-      "id": "7748"
-    },
-    {
-      "title": "12312",
-      "date": "2024-03-20",
-      "location": "Wembley Stadium",
-      "duration": "60",
-      "score": "0-2",
-      "team1Id": "1",
-      "team2Id": "2",
-      "id": "1"
-    },
-    {
-      "title": "UEFA Champions League Final",
-      "date": "2023-05-30",
-      "location": "Wembley Stadium",
-      "duration": "60",
-      "score": "3-2",
-      "team1Id": "1",
-      "team2Id": "2",
-      "id": "1"
-    }
-  ]
+	"players": [
+		{
+			"firstName": "Jan",
+			"lastName": "Kowalski",
+			"teamId": "1",
+			"id": "2"
+		},
+		{
+			"firstName": "Adam",
+			"lastName": "Nowak",
+			"label": "Adam Nowak",
+			"id": "3",
+			"teamId": "1"
+		},
+		{
+			"firstName": "Marek",
+			"lastName": "Lewandowski",
+			"label": "Marek Lewandowski",
+			"id": "5",
+			"teamId": "1"
+		},
+		{
+			"id": "3b1b",
+			"firstName": "asda",
+			"lastName": "adsa",
+			"teamId": 0
+		}
+	],
+	"teams": [
+		{
+			"name": "FC Barcelona",
+			"founded": "1",
+			"location": "1",
+			"id": "1"
+		},
+		{
+			"name": "Bayern Munich",
+			"founded": "2",
+			"location": "2",
+			"id": "2"
+		},
+		{
+			"id": "65c3",
+			"name": "asda",
+			"founded": "1234",
+			"location": "kajsdkaj"
+		},
+		{
+			"id": "5f81",
+			"name": "asda",
+			"founded": "1231",
+			"location": "asdada"
+		}
+	],
+	"games": [
+		{
+			"title": "UEFA Champions League Final",
+			"date": "2023-05-30",
+			"location": "Wembley Stadium",
+			"duration": "60",
+			"score": "3-2",
+			"team1Id": "1",
+			"team2Id": "2",
+			"id": "1"
+		},
+		{
+			"title": "Turniej Darka Budnioka",
+			"date": "2025-03-21",
+			"location": "Żory,Poland",
+			"duration": "90",
+			"score": "1-2",
+			"team1Id": "1",
+			"team2Id": "2",
+			"id": "7748"
+		}
+	]
 }

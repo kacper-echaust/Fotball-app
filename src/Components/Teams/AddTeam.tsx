@@ -14,16 +14,15 @@ type SingleUpdatePlayerType = {
 }
 
 const Container = styled.div`
-	position: sticky;
-	top: 0;
-	right: 0;
+	position: fixed;
+	right: 20%;
+	top: 20%;
 `
 const AddTeam = () => {
 	const { mutateAsync: handleUpdateTeamPlayers } = useUpdateApi('players')
 	const { mutateAsync: handleAddTeam } = usePostApi<SingleTeamType, SingleAddTeamType>('teams')
 	const teamForm = useForm<TeamFormType>()
 	const handleAddPlayerToTeam = (playersToTeam: SingleUpdatePlayerType[], teamId: number) => {
-		console.log(playersToTeam)
 		if (!playersToTeam) return
 
 		playersToTeam.forEach(playerToUpdate => {
@@ -33,7 +32,6 @@ const AddTeam = () => {
 	}
 	const onSubmit = async (data: TeamFormType) => {
 		const { name, founded, location, updatedPlayers } = data
-		console.log(data)
 		const newTeam = await handleAddTeam({ name, founded, location })
 		if (updatedPlayers?.length && newTeam?.id) {
 			handleAddPlayerToTeam(updatedPlayers, newTeam.id)

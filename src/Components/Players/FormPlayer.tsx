@@ -1,17 +1,10 @@
-import styled from 'styled-components'
 import { SubmitHandler, UseFormReturn } from 'react-hook-form'
 import { useGetApi } from '../../hooks/useGetApi'
 import { SingleAddPlayerType } from '../../types'
 import { StyledButton } from '../ui/StyledButton/StyledButton'
 import { StyledForm } from '../ui/StyledForm/StyledForm'
+import { StyledError } from '../ui/StyledError/StyledError'
 
-const Error = styled.p`
-	font-size: 10px;
-	color: red;
-	padding: 0;
-	margin: 0;
-	text-align: center;
-`
 type FormPlayerProps = {
 	formPlayer: UseFormReturn<SingleAddPlayerType>
 	onSubmit: SubmitHandler<SingleAddPlayerType>
@@ -37,12 +30,12 @@ const FormPlayer = ({ formPlayer, onSubmit, submitButtonText }: FormPlayerProps)
 			<label>
 				Imię:
 				<input type='text' {...register('firstName', inputOptions)} />
-				{errors.firstName && <Error>{errors.firstName.message}</Error>}
+				{errors.firstName && <StyledError>{errors.firstName.message}</StyledError>}
 			</label>
 			<label>
 				Nazwisko:
 				<input type='text' {...register('lastName', inputOptions)} />
-				{errors.lastName && <Error>{errors.lastName.message}</Error>}
+				{errors.lastName && <StyledError>{errors.lastName.message}</StyledError>}
 			</label>
 			<label>
 				Drużyna:
