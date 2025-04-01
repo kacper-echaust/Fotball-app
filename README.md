@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# ⚽ Football App 🏆
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Football App to nowoczesna aplikacja do śledzenia meczów, drużyn i statystyk piłkarskich.  
+Zbudowana w oparciu o **React + TypeScript**, wykorzystuje **styled-components** do dynamicznej stylizacji.
 
-Currently, two official plugins are available:
+## ✨ Kluczowe funkcje:
+✅ **Śledzenie meczów** – zobacz nadchodzące i zakończone mecze.  
+✅ **Lista graczy** – przeglądaj zawodników i ich statystyki.  
+✅ **Drużyny** – sprawdź skład i wyniki drużyn.  
+✅ **Statystyki** – analiza wyników i formy zespołów.  
+✅ **Nowoczesny UI** – użycie `styled-components` dla dynamicznej stylizacji.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Technologie:
+-  **React** + **TypeScript**
+-  **styled-components**  
+-  **React Hooks** (zarządzanie stanem)
+-  **React Hook Form** (zarządzanie formularzem)
+-  **Tanstack Query** (asynhroniczne zarządzanie stanem)
+- **Recharts** (wykres statystyk)
+-  **Vite** (szybkie budowanie aplikacji)  
 
-## Expanding the ESLint configuration
+## 🚀 Jak uruchomić?
+1. **Sklonuj repozytorium:**  
+   ```bash
+   git clone https://github.com/kacper-echaust/Fotball-app.git
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+2. **Przejdź do katalogu projektu :**  
+   ```bash
+   cd football-app
+3. **Zainstaluj zależności :**
+   ```bash
+   npm install
+4. **Uruchom bazę danych :**
+   ```bash
+   npx json-server src/data/db.json
+5. **Uruchom aplikację :**
+   ```bash
+   npm run dev
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
